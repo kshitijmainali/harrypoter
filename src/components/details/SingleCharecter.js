@@ -3,24 +3,29 @@ import React, { Component } from 'react';
 import Image from 'react-bootstrap/Image';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
+import { v4 as uuidv4 } from 'uuid';
 
 class SingleCharecter extends Component {
   state = {
     detail: [],
   };
   componentDidMount() {
-    let requestedProfile = [];
-    axios.get('http://localhost:5000/api/charecter/ron').then((res) => {
-      let { data } = res;
-      data = data.detail[0];
-      console.log(data);
-      //   requestedProfile.push(data);
-      this.setState({ detail: data });
-    });
-    console.log(requestedProfile);
+    //extract the current path and use it
+
+    const pathCurrent = window.location.pathname.split('/').pop();
+    console.log(pathCurrent);
+    axios
+      .get(`http://localhost:5000/api/charecter/${pathCurrent}`)
+      .then((res) => {
+        let { data } = res;
+        console.log(data);
+        data = data.detail[0];
+        this.setState({ detail: data });
+      });
   }
   render() {
-    console.log(this.state.detail);
+    let nickNames = this.state.detail.nickNames;
+    console.log(nickNames);
     return (
       <div>
         <Image src={this.state.detail.photo} roundedCircle fluid />
@@ -30,6 +35,9 @@ class SingleCharecter extends Component {
           </Tab>
           <Tab eventKey='description' title='description'>
             {this.state.detail.description}
+          </Tab>
+          <Tab eventKey='Nicknames' title='Nicknames'>
+            {nickNames.map((names) => names)}
           </Tab>
         </Tabs>
       </div>
