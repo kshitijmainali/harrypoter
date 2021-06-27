@@ -4,11 +4,18 @@ const file = `${__dirname}/charecter.json`;
 const charecters = JSON.parse(fs.readFileSync(file));
 
 const charecterLister = async (req, res) => {
-  console.log('request arrived');
+  const intermidiate = charecters.map((ch) => {
+    let selectedValues = {
+      name: ch.name,
+      key: ch.key,
+      photo: ch.photo,
+    };
+    return selectedValues;
+  });
   try {
     res.status(200).json({
       success: true,
-      charecters,
+      charecters: intermidiate,
     });
   } catch (err) {
     console.log(err);
