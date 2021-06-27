@@ -36,9 +36,6 @@ class SingleCharecter extends Component {
           <Tab eventKey='description' title='description'>
             {this.state.detail.description}
           </Tab>
-          <Tab eventKey='Nicknames' title='Nicknames'>
-            {nickNames.map((names) => names)}
-          </Tab>
         </Tabs>
       </div>
     );
