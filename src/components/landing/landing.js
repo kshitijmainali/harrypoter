@@ -11,7 +11,6 @@ import CardComponent from './card';
 class Landing extends Component {
   state = {
     charecters: [],
-    loading: true,
   };
   componentDidMount() {
     this.fetchCharecters();
@@ -30,7 +29,7 @@ class Landing extends Component {
         };
         charecter.push(newCharecter);
       });
-      this.setState({ charecters: charecter, loading: false });
+      this.setState({ charecters: charecter });
     });
   };
   render() {
