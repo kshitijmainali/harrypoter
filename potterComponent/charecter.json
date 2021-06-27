@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Sirius Black",
+    "description": "Harry's godfather who was a close friend of Harry's father James. Escapee from Azkaban prison and member of the Order of the Phoenix. Killed in the Battle of the Department of Mysteries by his cousin Bellatrix Lestrange."
+  },
+  {
+    "name": "Hermione Granger",
+    "description": "Muggle-born Gryffindor student in Harry's year and one of his best friends. Prefect and co-founder of Dumbledore's Army."
+  },
+  {
+    "name": "Ron Weasley",
+    "description": "Youngest son of Arthur and Molly Weasley who is best friends with Harry Potter and Hermione Granger. Gryffindor Quidditch Keeper"
+  },
+  {
+    "name": "Rubeus Hagrid",
+    "description": "Half-giant Hogwarts gamekeeper"
+  }
+]
