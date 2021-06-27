@@ -4,6 +4,7 @@ const file = `${__dirname}/charecter.json`;
 const charecters = JSON.parse(fs.readFileSync(file));
 
 const charecterLister = async (req, res) => {
+  console.log('request arrived');
   try {
     res.status(200).json({
       success: true,

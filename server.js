@@ -1,10 +1,15 @@
 const express = require('express');
-const listingRoute = require('./potterComponent/listingRoute');
+const cors = require('cors');
+const path = require('path');
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
+app.use('/assets', express.static(path.resolve('uploads')));
+const listingRoute = require('./potterComponent/listingRoute');
 //routes
 app.use('/api/listAll', listingRoute);
 
